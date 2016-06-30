@@ -1,0 +1,77 @@
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+        <li>
+        <li> <a href = "/posts/top">トップへ</a></li>
+        <li> <a href = "/users/new">新規会員登録</a></li>
+        <li> <a href = "/users/login">ユーザーログイン</a></li>
+    </ul>
+  </div>
+<div>
+</header>
+
+
+<div class="content content--mypage">
+  <div class="content-head">
+    <ul class="breadcrumb--pt1">
+  <li><a href="/">リジョブ</a></li><li>プロフィール</li>
+</ul>
+
+<div class="warrper--mypage">
+
+  <div class="mypage-side">
+<ul class="mypage-navi">
+
+    <li><a href="/users/mypage" false="">マイページ</a></li>
+    <!-- <li><a href="/job_keep" false="">キープ</a></li> -->
+    <li><a href="/users/profile" class="current">プロフィール</a>
+    <li><a href="/jobs/joblist" false="">案件一覧</a></li>
+
+<br><br><br><br><br>
+
+
+</ul>
+</div>
+
+<div class="row row-mg mb_30">
+  <!-- <div class="cols_4"> -->
+    <div class="mypage-info">
+
+
+<h1 align="left">基本情報</h1>
+
+  <br>
+
+<%= form_for(@user, url: {controller: "users", action: "edit"}, html: {method: "post"})  do |f| %>
+  <p align="left">
+    <%= f.label :名前 %><br>
+    <%= f.text_area :name,  :size=>"60" %>
+ </p>
+
+  <p align="left">
+    <%= f.label :フリガナ%><br>
+    <%= f.text_area :hurigana,  :size=>"60"%>
+  </p>
+
+  <p align="left">
+    <%= f.label :メールアドレス%><br>
+    <%= f.text_area :email,  :size=>"60"%>
+  </p>
+
+  <p align="left">
+    <%= f.label :パスワード%><br>
+    <%= f.text_area :password,  :size=>"60"%>
+  </p>
+
+
+  <p>
+    <%= f.submit "更新する" %>
+  </p>
+
+<% end %>
+    </div>
+  </div>
+</div>

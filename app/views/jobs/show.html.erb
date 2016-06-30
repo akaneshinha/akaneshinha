@@ -1,0 +1,180 @@
+
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+        <li>
+        <li> <a href = "/posts/top">トップへ</a></li>
+        <li> <a href = "/users/new">新規会員登録</a></li>
+        <li> <a href = "/users/login">ユーザーログイン</a></li>
+     </ul>
+   </div>
+  </div>
+</div>
+</header>
+
+<div class="heading1-pt1">
+  <h1><%= @job.title %></h1>
+</div>
+
+
+<!-- コピペ -->
+<!-- <div class="heading1-pt1">
+  <h1 class="heading1-pt1__sub">パリス・デ・スキン／アイ みのおキューズモール店の求人｜求人募集</h1>
+  <h2>車通勤可‼︎千里中央駅より直通バスあり☆みのおキューズモール☆アイラッシュ＆脱毛エステサロン</h2>
+</div> -->
+
+<section class="job-data">
+    <div class="job-data__main">
+        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/Kp-Q2V/PWQmXL/1GOgqh/G1y4bl/Iqs/shop_album.png?1458453574">
+
+        <img src="https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/CSvIEN/Zwoa6t/ZCo42s/lbxL2U/eXo/shop_album.png?1458453622" class="f_right"> -->
+
+
+  <section class="area_visionary">
+
+
+
+      <section>
+        <table class="table table-set--jobdata">
+          <colgroup>
+            <col style="width: 150px;">
+          </colgroup>
+          <tbody>
+
+
+              <tr>
+
+                <tr>
+                  <th>PR</th>
+                  <td>
+                    <%= @job.detail %>
+                  </td>
+
+              <tr>
+                <th>応募と今後の流れ</th>
+                <td>●リジョブの応募フォームよりご応募
+<br>↓
+<br>●面接可否を、電話もしくはメールにてお知らせ致します。
+<br>*ドメイン指定受信の解除を予めして下さい。
+<br>↓
+<br>●担当者と面接
+<br>↓
+<br>●採用決定
+<br>↓
+<br>◎入社
+<br>
+<br>*採用方法が変更となる場合もございますので、ご了承ください。</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div class="row row-mg mt_10 mb_10">
+
+                        <!-- <a href="/jobs/entry" class="btn w-block btn--pt3" rel="nofollow"> WEB応募する </a></div> -->
+                        <!-- <form action="/jobs/entry" method="post" class="btn w-block btn--pt3" rel="nofollow"> WEB応募する> </div> -->
+                      <%= form_tag("/jobs/entry", method: :post) do %>
+                          <input type="submit" value="WEB応募する" />
+                          <input name="job_id" type="hidden" value="<%= @job.id %>" />
+                          <input name="user_id" type="hidden" value="<%= @user.id %>" />
+                      <% end %>
+                  </div>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2 class="heading2-pt4">会社情報</h2>
+        <table class="table table-set--jobdata">
+          <colgroup>
+            <col style="width: 140px;">
+          </colgroup>
+          <tbody>
+          <tr>
+            <th>会社名</th>
+            <td>パリス・デ・スキン/アイ みのおキューズモール店</td>
+          </tr>
+          </tbody>
+        </table>
+          <div class="row row-mg mt_20 mb_5">
+            <div class="cols_4"><span class="txt_size_22"><span class="icon-phone rj_typo_color-g"></span> 0120-954-077</span></div>
+            <div class="cols_8"><span class="txt_size_10">平日 10:00〜18:00　※土日祝日休み<br>求人番号：B5334131<br>お問い合わせの際求人番号をお控え下さい</span></div>
+      </section>
+    </div><!-- job-data__main -->
+
+      <script type="application/ld+json">
+        {"@context":"http://schema.org","@type":"JobPosting","datePosted":"2016年03月22日","description":"パリス・デ・スキン／アイ みのおキューズモール店の車通勤可‼︎千里中央駅より直通バスあり☆みのおキューズモール☆アイラッシュ＆脱毛エステサロンの求人情報！パリス・デ・スキン／アイ みのおキューズモール店の求人を探しているなら、業界専門サイトの求人サイトリジョブ","jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"箕面市","addressRegion":"大阪府"}},"occupationalCategory":"39-5012.00 Hairdressers, Hairstylists, and Cosmetologists","qualifications":"まつエク（美容師さん）、エステティシャンは免許不要です。\r\n\r\n当店が目指すのは笑顔の絶えない明るいお店。\r\nNEW OPENでみんな一緒のスタート。\r\nパリスは 全国展開し サポートも充実 未経験でも大丈夫です。\r\nノウハウはたくさん 基礎から上級テクニック コツなど丁寧に指導させて頂きます。\r\n美容を 通して 人を喜ばせる仕事がしたい。\r\n自分の興味や資格を活かし お客様に 笑顔で接客出来る方 。 歓迎","salaryCurrency":"JPY","title":"車通勤可‼︎千里中央駅より直通バスあり☆みのおキューズモール☆アイラッシュ＆脱毛エステサロン","name":"パリス・デ・スキン／アイ みのおキューズモール店の求人｜リジョブ","baseSalary":{"@type":"PriceSpecification","minPrice":230000,"priceCurrency":"JPY","maxPrice":280000},"employmentType":"正社員","image":"https://s3-ap-northeast-1.amazonaws.com/rejob-v2-images-production/files/client_shop_image/Kp-Q2V/PWQmXL/1GOgqh/G1y4bl/Iqs/thumb.png?1458453574","industry":"アイリスト、美容師・理容師","jobBenefits":"正社員、大手サロン、完全個室、急募、車・バイク通勤OK、地域密着、アットホーム、ボーナス・賞与あり、ノルマなし、社会保険完備、交通費支給、社員登用あり、研修制度あり、副業・WワークOK、制服あり、週1回、週2回、週3回、週4回、週5回、未経験歓迎、経験者歓迎、新卒歓迎、施術者、フェイシャル、脱毛エステ、アルバイト、アイラッシュ、まつげエクステ、美容師免許"}
+      </script>
+
+
+<div id="js-scout-assent-modal" class="popDiv_id" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -420px; top: 50px;">
+  <a href="#" class="modal_close js-no-scroll"></a>
+  <div id="js-scout-assent-modal-inner">
+  </div>
+</div>
+
+<div class="job-data__side" style="height: 100px;">
+
+<div class="job-data__side__top">
+
+  <table class="table table-set--pt4 txt_size_12 table--thd-pt2">
+    <colgroup>
+      <col style="width: 60px;">
+    </colgroup>
+    <tbody>
+    <tr>
+      <th>募集職種</th>
+      <td>
+            <!-- アイリスト
+            <!--TODO: 書き方いい方法あれば後で変更--> -->
+      </td>
+    </tr>
+
+    <tr>
+      <th>勤務地</th>
+      <td>
+        <!-- 千葉県成田市 -->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div class="job-data__side__fix-area">
+    <table class="table table-set--pt4 txt_size_12 table--thd-pt2 mb_5">
+      <colgroup>
+        <col style="width: 60px;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>
+            電話番号<br>
+            <span class="icon-phone txt_size_26 rj_typo_color-g ml_10"></span>
+          </th>
+          <td>
+            <span class="txt_size_22 rj_typo_color-c">0120-954-077</span><br>
+            <span class="txt_size_10">平日 10:00〜18:00　※土日祝日休み</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="js_fixed_bar js_bookmark_area">
+          <!-- <a href="jobs_entry_path" class="btn btn--pt3 btn--entry01 btn--kantan w-block" rel="nofollow"> WEB応募する </a> -->
+        <br>
+        <%= form_tag("/jobs/entry", method: :post) do %>
+          <input type="submit" value="WEB応募する" />
+          <input name="job_id" type="hidden" value="<%= @job.id %>" />
+          <input name="user_id" type="hidden" value="<%= @user.id %>" />
+        <% end %>
+
+    </div>
+  </div>
+
+    </div>
+
+
+    </div>
+  </section>

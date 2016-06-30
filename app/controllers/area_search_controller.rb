@@ -1,0 +1,2 @@
+class AreaSearchController < ApplicationController
+end

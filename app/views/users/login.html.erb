@@ -1,0 +1,54 @@
+
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+        <li>
+        <li> <a href = "/posts/top">トップへ</a></li>
+        <li> <a href = "/users/new">新規会員登録</a></li>
+        <li> <a href = "/users/login">ユーザーログイン</a></li>
+    </ul>
+  </div>
+<div>
+</header>
+
+<!-- ＃ログイン認証画面 -->
+
+<!-- フラッシュ変数のメッセージを表示（ログインエラー時のみ） -->
+<p><font color=red><%= flash[:alert] %></font></p>
+
+<!-- <form method=get action="/session_create">
+  メールアドレス<input type="email" name="email">
+  パスワード<input type="password" name="password">
+  <input type="submit" value="ログイン">
+</form> -->
+
+
+<div class="content content--mypage">
+  <div class="content-head">
+    <ul class="breadcrumb--pt1">
+      <li><a href="/">ホーム</a></li>
+      <li><span>ログイン</span></li>
+    </ul>
+    <h1 class="heading1-pt1">求職者様ログイン</h1>
+  </div>
+  <section class="box-pt1 p_50">
+    <form class="login_form" action="/session_create" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="FrUhNf6ajpprMoCpe0PfY6MVkr1LK8717otTiDcaUk44SnOxDrthOhOoEJYhNDvzlaqJABCR9SbPb57EeTo6DQ==">
+        <div class="row row-mg mb_10">
+          <div class="cols_5">
+            <input autofocus="autofocus" class="w-block" placeholder="メールアドレス" type="email" value="" name="email">
+          </div>
+
+          <div class="cols_5">
+            <input autocomplete="off" class="w-block" placeholder="パスワード" type="password" name="password">
+          </div>
+
+          <div class="cols_2">
+            <input type="submit" name="commit" value="ログイン" class="btn btn--pt2 w-block">
+          </div>
+        </div>
+
+</form>  </section>
+</div>

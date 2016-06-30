@@ -1,0 +1,78 @@
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+        <li>
+        <li> <a href = "/posts/top">トップへ</a></li>
+        <li> <a href = "/users/new">新規会員登録</a></li>
+        <li> <a href = "/users/login">ユーザーログイン</a></li>
+    </ul>
+  </div>
+<div>
+</header>
+
+
+
+
+
+<div class="content content--mypage">
+  <div class="content-head">
+    <ul class="breadcrumb--pt1">
+  <li><a href="/">リジョブ</a></li><li>マイページトップ</li>
+</ul>
+
+<script type="application/ld+json">
+  {"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://relax-job.com/","name":"リジョブ"}},{"@type":"ListItem","position":2,"item":{"@id":"","name":"マイページトップ"}}]}
+</script>
+
+    <h1 class="heading1-pt1"><%= @user.name %>さんのマイページ</h1>
+
+      <div class="alert-box alert-box--notice mb_10">
+        <a class="js-alert-box__close">×</a>
+        <p>ログインしました。</p>
+      </div>
+  </div>
+
+  <div class="warrper--mypage">
+
+    <div class="mypage-side">
+  <ul class="mypage-navi">
+
+      <li><a href="/users/mypage" class="current">マイページ</a></li>
+      <!-- <li><a href="/job_keep" false="">キープ</a></li> -->
+      <li><a href="/users/profile" false="">プロフィール</a></li>
+      <li><a href="/jobs/joblist" false="">案件一覧</a></li>
+
+  </ul>
+</div>
+<!-- side-nav--mypage -->
+
+
+    <div class="mypage-main">
+      <h2 class="heading2-mypage">マイページトップ</h2>
+<section>
+  <div class="row row-mg mb_30">
+    <div class="cols_4">
+      <div class="mypage-info">
+        <h3 class="mypage-info__title">応募履歴</h3>
+        <div class="mypage-info__circle"><span class="mypage-info__circle__count"><%= @entry.count %><span class="txt_size_12">件</span></span>
+          <p class="txt_size_10">
+          </p>
+        </div>
+        <p class="mypage-info__footer"></p>
+      </div>
+    </div>
+    <div class="cols_4">
+      <div class="mypage-info">
+        <h3 class="mypage-info__title"><i class="icon-attach"></i> キープ中の案件</h3>
+        <div class="mypage-info__circle">
+          <span class="mypage-info__circle__count">0<span class="txt_size_12">件</span></span>
+          <p class="txt_size_10">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

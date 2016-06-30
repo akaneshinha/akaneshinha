@@ -1,0 +1,64 @@
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+     </ul>
+   </div>
+  </div>
+</div>
+</header>
+
+<h2 class="heading2-pt6 mt_30" align=center>新規登録</tr></h2>
+
+<br><br>
+
+    <%= form_for(@job, url: {controller: :admin, action: :job_create}, html: {method: "post"}) do |f| %>
+<tr>
+  <th><p align=center><%= f.label :タイトル %></th><td><%= f.text_field :title %></p></td>
+</tr>
+  <br>
+
+  <p align=center><%= f.label :詳細 %><%= f.text_field :detail %></p>
+<tr>
+  <br>
+
+  <p align=center>選択してください：<br>
+    <%= f.label :job_type_id, '　業種:' %>
+    <%= f.select :job_type_id,
+      options_from_collection_for_select(JobType.all, "id", "name",
+                                         selected: @job_type_id),
+      include_blank: true %>
+  </p>
+
+  <br>
+
+  <p align=center>選択してください：<br>
+    <%= f.label :job_type_detail_id, '　職種:' %>
+    <%= f.select :job_type_detail_id,
+      options_from_collection_for_select(JobTypeDetail.all, "id", "name",
+                                         selected: @job_type_detail_id),
+      include_blank: true %>
+  </p>
+
+  <br>
+
+  <p align=center>選択してください：<br>
+    <%= f.label :area_id, '　都道府県:' %>
+    <%= f.select :area_id,
+      options_from_collection_for_select(Area.all, "id", "name",
+                                         selected: @Area_id),
+      include_blank: true %>
+  </p>
+
+<br>
+<br>
+
+  <div class = "actions" align=center>
+  <%= f.submit "submit" %>
+
+<% end %>
+</h2>
+
+<br><br><br>

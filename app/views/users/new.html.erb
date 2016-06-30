@@ -1,0 +1,55 @@
+<header>
+<div class ="header">
+  <div class = "header-top">
+    <div class="container">
+      <ul class="header-top__navi"
+
+        <li>
+        <li> <a href = "/posts/top">トップへ</a></li>
+        <li> <a href = "/users/new">新規会員登録</a></li>
+        <li> <a href = "/users/login">ユーザーログイン</a></li>
+     </ul>
+   </div>
+  </div>
+</div>
+</header>
+
+<div align=center>
+<font color="#a9a9a9"><h1 class="heading1-pt1">新規会員登録</h1>
+
+<!-- <form action="/users/new" method="post">
+  <input name="authenticity_token" type="hidden" value="1234" /> -->
+
+
+<%= form_tag('/users/create', method: :post) do %>
+<table>
+ <tr>
+   <th><label for="name">氏名</label> </th>
+   <td><input type="string" id="name" name="name" /></td>
+ </tr>
+
+<tr>
+  <th><label for="name">フリガナ</label></th>
+  <td><input type="string" id="hurigana" name="hurigana" /></td>
+</tr>
+
+<tr>
+  <th><label for="name">メールアドレス</label></th>
+  <td><input type="string" id="email" name="email" /> </td>
+</tr>
+
+<tr>
+  <th><label for="name">パスワード</label></th>
+  <td><input type="string" id="password" name="password" /> </td>
+</tr>
+
+</table>
+
+  <div class="button">
+      <button type="submit">会員登録</button>
+  </div>
+
+<% end %>
+</div>
+
+<br><br>

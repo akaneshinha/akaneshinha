@@ -1,0 +1,62 @@
+
+<link rel="stylesheet" href="public.css" type="public/css">
+
+<h1 class="heading1-pt1">リジョブ管理画面</h1>
+
+
+<br>
+
+   <a href="/admin/admin_new">
+     <button type="new">新規作成</button>
+   </a>
+
+<br>
+<table border="2" width="100%" style="table-layout: auto;"  cellpadding="15">
+
+  <tr bgcolor="#f0f8ff">
+    <td>業種</td>
+    <td>職種</td>
+    <td>都道府県</td>
+    <td>タイトル</td>
+    <td>詳細</td>
+    <td>訂正</td>
+    <td>削除ボタン</td>
+    <td>応募数</td>
+  </tr>
+
+<% @jobs.each do |job| %>
+
+<tr>
+  <td width="6%"><%= job.job_type.try(:name) %></td>
+  <td width="6%"><%= job.job_type_detail.try(:name) %></td>
+  <td width="6%"><%= job.area.try(:name) %></td>
+  <td width="20%">
+    <a href="/jobs/show?id=<%= job.id %>"><%= job.title %></a>
+  </td>
+  <td width="50%"><%= job.detail %></td>
+  <!-- <td><form method="get" action="http://localhost:3000/admin_edit/edit"> -->
+  <td width="6%" class="text-center">
+    <div class="button-margin"></div>
+    <a class="btn btn-xs btn-warning" name="編集" href="/admin_edit/<%= job.id %>/edit">Edit</a>
+  </td>
+
+    <!-- <td class="text-center"><div class="button-margin"></div><a class="btn btn-xs btn-warning" name="編集" href="/admin_edit/<%= job.id %>/edit">削除</a></td> -->
+　<td width="3%"><%= link_to "削除", "/admins/destroy/#{job.id}", method: :destroy %></td>
+  <td width="3%"><%= Entry.where(job_id: job.id).count %></td>
+</tr>
+
+<!--
+<td><a class="btn btn-xs btn-warning" name="edit" href="/admins/admin/<%= params[:id] %>">destroy</a>
+</p></td> -->
+
+
+<!-- <s:form action = "delete">
+<td><html :submit value="削除４" property ="delete/${job.id}"/></td>
+</s :form> -->
+
+　　<!-- <form>　
+    <input type="destroy" value="削除３">
+    <input type="button" onclick="destroy" value="削除３">
+    </form> -->
+<% end %>
+</table>
